@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Cover Letter Builder — write a tailored cover letter in minutes. Matching templates for your resume, perfect A4 PDFs, free to start." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f5cff'/%3E%3Cpath d='M14 22a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V22z' fill='white'/%3E%3Cpath d='M14 24l18 13L50 24' stroke='%232f5cff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+<title>Cover Letter Builder — Write a Letter That Gets You Hired</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#f6f7fb;
+    --bg-2:#eceef6;
+    --surface:#ffffff;
+    --surface-2:#eef0f8;
+    --ink:#131a2e;
+    --ink-2:#3d4763;
+    --ink-3:#6b7590;
+    --line:#dde1ee;
+    --accent:#2f5cff;
+    --accent-ink:#ffffff;
+    --accent-soft:#e3ebff;
+    --violet:#7c4dff;
+    --gold:#b97e10;
+    --gold-soft:#fdf3d7;
+    --paper:#ffffff;
+    --paper-ink:#1c2333;
+    --paper-ink-2:#4a5468;
+    --shadow:0 18px 50px rgba(19,26,46,.14);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0b0f1a;
+      --bg-2:#0e1424;
+      --surface:#121a2e;
+      --surface-2:#16203a;
+      --ink:#eef1fa;
+      --ink-2:#b9c2da;
+      --ink-3:#8490ad;
+      --line:#233052;
+      --accent:#5b83ff;
+      --accent-soft:#1b2a52;
+      --violet:#9a7bff;
+      --gold:#e8b93e;
+      --gold-soft:#2c2410;
+      --shadow:0 18px 50px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.sora{font-family:"Sora",sans-serif;letter-spacing:-.01em}
+  a{color:var(--accent)}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  .preview-flag{
+    background:linear-gradient(90deg,#0f1a36,#1e2f6b 55%,#2f1e5e);color:#fff;
+    font-size:13px;font-weight:600;text-align:center;padding:9px 16px;letter-spacing:.02em;
+  }
+  .preview-flag b{color:#ffd94d}
+  .sec-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid color-mix(in srgb, var(--accent) 18%, transparent);padding:6px 11px;border-radius:999px;margin-bottom:14px}
+  .sec-eyebrow svg{width:13px;height:13px}
+  .btn svg{width:16px;height:16px;flex:none}
+  .sheet-bar .btn svg{width:14px;height:14px}
+
+  /* ---------- Nav ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;gap:28px;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Sora",sans-serif;font-weight:700;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+  .brand .mark{
+    width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#2f5cff 0%,#1e40d8 55%,#7c4dff 130%);color:#fff;
+    display:grid;place-items:center;flex:none;box-shadow:0 6px 18px rgba(47,92,255,.35);position:relative;overflow:hidden;
+  }
+  .brand .mark svg{width:21px;height:21px;position:relative;z-index:1}
+  .brand .mark::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.22),transparent 55%)}
+  .brand small{display:block;font-family:"Inter",sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);line-height:1;margin-top:1px}
+  .brand-text{line-height:1.05}
+  .nav nav{display:flex;gap:22px;margin-left:auto}
+  .nav nav a{color:var(--ink-2);text-decoration:none;font-size:14.5px;font-weight:500}
+  .nav nav a:hover{color:var(--ink)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;
+    font-family:"Inter",sans-serif;font-weight:600;font-size:15px;
+    padding:11px 20px;border-radius:10px;text-decoration:none;
+    transition:transform .12s ease, background .12s ease, box-shadow .12s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{background:color-mix(in srgb, var(--accent) 88%, #000)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--ink-3)}
+  .btn-sm{padding:8px 14px;font-size:14px}
+  .nav .btn{margin-left:6px}
+  @media (max-width:760px){
+    .nav nav{display:none}
+    .nav{height:auto;min-height:58px;padding:8px 0;gap:12px}
+    .brand{font-size:15px;white-space:nowrap}
+    .brand small{display:none}
+    .brand .mark{width:32px;height:32px}
+    .brand .mark svg{width:17px;height:17px}
+    .nav .btn{margin-left:auto;white-space:nowrap;padding:8px 12px;font-size:13.5px}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:56px 0 18px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+    background-image:radial-gradient(color-mix(in srgb, var(--ink) 9%, transparent) 1px, transparent 1px);background-size:22px 22px;
+    -webkit-mask-image:radial-gradient(ellipse 75% 60% at 50% 0%, black 30%, transparent 75%);mask-image:radial-gradient(ellipse 75% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:-30% -10% auto;height:560px;pointer-events:none;
+    background:radial-gradient(620px 320px at 18% 10%, rgba(47,92,255,.16), transparent 65%),radial-gradient(560px 300px at 84% 8%, rgba(124,77,255,.14), transparent 65%),radial-gradient(420px 240px at 50% 42%, rgba(232,185,62,.10), transparent 70%);
+  }
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 7px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:0 4px 16px rgba(19,26,46,.06);position:relative;z-index:1;margin-bottom:20px}
+  .hero-badge .pill{background:var(--accent);color:#fff;font-size:11px;font-weight:800;letter-spacing:.06em;padding:4px 8px;border-radius:999px}
+  .hero-badge .stars{color:#e8a90c;letter-spacing:1px;font-size:12px}
+  .hero h1{font-size:clamp(38px,5.8vw,62px);line-height:1.02;font-weight:800;margin:0 auto 18px;max-width:860px;position:relative;z-index:1}
+  .hero h1 .hl{position:relative;white-space:nowrap}
+  .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:linear-gradient(90deg,#ffe58a,#f5c542);opacity:.65;z-index:-1;border-radius:3px;transform:rotate(-.4deg)}
+  .hero p.sub{font-size:clamp(16px,2vw,19.5px);color:var(--ink-2);max-width:660px;margin:0 auto 28px;position:relative;z-index:1;line-height:1.65}
+  .hero .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+  .hero .cta-row .btn-primary{box-shadow:0 10px 28px rgba(47,92,255,.32);padding:14px 24px;font-size:15.5px;border-radius:12px}
+  .hero .cta-row .btn-ghost{padding:14px 22px;border-radius:12px;background:var(--surface)}
+  .hero .proof{margin-top:20px;font-size:13.5px;color:var(--ink-3);position:relative;z-index:1;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+  .hero .proof span{display:inline-flex;align-items:center;gap:6px}
+  .hero .proof svg{width:15px;height:15px;color:#16a34a;flex:none}
+  .hero .proof b{color:var(--ink-2)}
+  .hero-stats{display:flex;justify-content:center;gap:0;margin:36px auto 0;max-width:680px;position:relative;z-index:1;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-stats div{flex:1;padding:16px 10px 14px}
+  .hero-stats div+div{border-left:1px solid var(--line)}
+  .hero-stats b{display:block;font-family:"Sora",sans-serif;font-size:20px;line-height:1;color:var(--ink)}
+  .hero-stats span{display:block;font-size:12px;color:var(--ink-3);font-weight:600;margin-top:5px;letter-spacing:.02em}
+  @media(max-width:560px){.hero-stats b{font-size:17px}.hero-stats span{font-size:11px}
+    .hero-badge{flex-wrap:wrap;justify-content:center;text-align:center;border-radius:18px;padding:9px 14px;max-width:94%;line-height:1.35;row-gap:4px}
+  }
+  /* Logos strip */
+  .logos{padding:26px 0 6px;text-align:center;position:relative;z-index:1}
+  .logos p{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:0 0 16px}
+  .logo-row{display:flex;align-items:center;justify-content:center;gap:14px 34px;flex-wrap:wrap;opacity:.92}
+  .logo-item{display:flex;align-items:center;gap:8px;color:var(--ink-3);font-weight:700;white-space:nowrap;transition:color .15s}
+  .logo-item:hover{color:var(--ink)}
+  .logo-item svg{width:20px;height:20px;flex:none}
+  .logo-item .lg{font-family:"Sora",sans-serif;font-size:15.5px;letter-spacing:-.02em}
+  .logo-item.serif{font-family:"Source Serif 4",serif}
+  .logo-item.mono{font-family:ui-monospace,monospace;font-weight:600;letter-spacing:-.03em}
+
+  /* ---------- Builder ---------- */
+  section{padding:56px 0}
+  .sec-head{max-width:680px;margin:0 auto 34px;text-align:center}
+  .sec-head h2{font-size:clamp(26px,3.4vw,36px);margin:0 0 10px;font-weight:700}
+  .sec-head p{color:var(--ink-2);margin:0}
+  .builder{
+    display:grid;grid-template-columns:400px 1fr;gap:26px;align-items:start;
+  }
+  @media (max-width:920px){ .builder{grid-template-columns:1fr} }
+  .panel{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);
+  }
+  .panel h3{margin:0 0 4px;font-size:17px}
+  .panel .hint{font-size:13px;color:var(--ink-3);margin:0 0 18px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:5px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;
+    background:var(--bg);color:var(--ink);font:inherit;font-size:14.5px;
+  }
+  .field textarea{resize:vertical;min-height:64px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .seg{display:flex;gap:6px;flex-wrap:wrap}
+  .seg button{
+    border:1px solid var(--line);background:var(--bg);color:var(--ink-2);
+    padding:7px 13px;border-radius:999px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
+  }
+  .seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .tpl-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .tpl-pick button{
+    border:1.5px solid var(--line);background:var(--bg);border-radius:9px;padding:9px 6px;cursor:pointer;
+    font:inherit;font-size:12.5px;font-weight:600;color:var(--ink-2);text-align:center;
+  }
+  .tpl-pick button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+  .tpl-pick button .pro{display:block;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:.06em}
+
+  /* The letter sheet */
+  .sheet-wrap{position:sticky;top:88px}
+  @media (max-width:920px){ .sheet-wrap{position:static} }
+  .sheet{
+    background:var(--paper);color:var(--paper-ink);border-radius:6px;
+    box-shadow:var(--shadow);padding:46px 50px;min-height:640px;
+    font-size:14.5px;line-height:1.65;
+  }
+  @media (max-width:560px){ .sheet{padding:30px 24px;min-height:0} }
+  .sheet .l-head{margin-bottom:26px}
+  .sheet .l-name{font-family:"Sora",sans-serif;font-size:24px;font-weight:700;line-height:1.2}
+  .sheet .l-contact{font-size:12.5px;color:var(--paper-ink-2);margin-top:3px}
+  .sheet p{margin:0 0 13px}
+  .sheet .l-sign{margin-top:22px}
+  .sheet .l-sig{font-family:"Source Serif 4",serif;font-style:italic;font-size:19px}
+  /* template variants */
+  .sheet.t-modern .l-head{border-bottom:3px solid #2f5cff;padding-bottom:14px}
+  .sheet.t-modern .l-name{color:#2f5cff}
+  .sheet.t-classic{font-family:"Source Serif 4",serif}
+  .sheet.t-classic .l-head{text-align:center;border-bottom:1px solid #c9cede;padding-bottom:14px}
+  .sheet.t-classic .l-name{font-family:"Source Serif 4",serif}
+  .sheet.t-slate .l-head{background:#26314d;color:#fff;margin:-46px -50px 26px;padding:30px 50px 20px;border-radius:6px 6px 0 0}
+  .sheet.t-slate .l-contact{color:#b9c2da}
+  @media (max-width:560px){ .sheet.t-slate .l-head{margin:-30px -24px 22px;padding:22px 24px 14px} }
+  .sheet.t-paper{background:#fdfaf2}
+  .sheet.t-paper .l-head{border-bottom:1px dashed #b8ac8d;padding-bottom:12px}
+  .sheet.t-paper .l-name{font-family:"Source Serif 4",serif}
+  .sheet.t-fern .l-head{border-bottom:3px solid #3e7d4e;padding-bottom:12px}
+  .sheet.t-fern .l-name{color:#33693f}
+  .sheet.t-bold .l-head{border-top:10px solid #141414;padding-top:16px}
+  .sheet.t-bold .l-name{text-transform:uppercase;letter-spacing:.03em;font-size:26px}
+  .sheet.t-executive{font-family:"Source Serif 4",serif}
+  .sheet.t-executive .l-head{text-align:center;border-bottom:3px double #b39b6d;padding-bottom:14px}
+  .sheet.t-executive .l-name{font-family:"Source Serif 4",serif;color:#5a4632}
+  .sheet.t-onyx .l-head{border-left:5px solid #141414;padding-left:16px}
+  .sheet.t-onyx .l-name{letter-spacing:.01em}
+  .sheet-bar{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;
+  }
+  .sheet-bar .wc{font-size:13px;color:var(--ink-3);margin-right:auto}
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
+    background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:10px;font-size:14px;font-weight:600;
+    opacity:0;pointer-events:none;transition:all .25s ease;z-index:99;max-width:90vw;text-align:center;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ---------- Gallery ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+  .tpl-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .tpl-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .tpl-thumb{background:#e8eaf2;padding:16px 16px 0}
+  @media (prefers-color-scheme: dark){ .tpl-thumb{background:#0a0e18} }
+  .mini{
+    background:#fff;color:#232a3d;border-radius:4px 4px 0 0;padding:14px 14px 10px;height:168px;overflow:hidden;
+    font-size:6.8px;line-height:1.55;box-shadow:0 4px 14px rgba(10,15,30,.18);
+  }
+  .mini .m-name{font-family:"Sora",sans-serif;font-size:10.5px;font-weight:700;margin-bottom:2px}
+  .mini .m-line{height:4px;border-radius:2px;background:#dfe3ee;margin:5px 0}
+  .mini .m-line.short{width:55%}
+  .mini.m-modern .m-name{color:#2f5cff}
+  .mini.m-modern{border-top:4px solid #2f5cff}
+  .mini.m-classic{font-family:"Source Serif 4",serif;text-align:center}
+  .mini.m-slate .m-head{background:#26314d;color:#fff;margin:-14px -14px 8px;padding:10px 14px 6px}
+  .mini.m-slate .m-head .m-line{background:#46536f}
+  .mini.m-paper{background:#fdfaf2}
+  .mini.m-fern .m-name{color:#33693f}
+  .mini.m-fern{border-top:4px solid #3e7d4e}
+  .mini.m-onyx{border-left:5px solid #141414}
+  .mini.m-bold .m-name{font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+  .mini.m-bold{border-top:8px solid #141414}
+  .mini.m-executive .m-name{color:#5a4632;font-family:"Source Serif 4",serif}
+  .mini.m-executive{border-bottom:3px double #b39b6d}
+  .tpl-meta{display:flex;align-items:center;gap:8px;padding:12px 14px}
+  .tpl-meta .tname{font-weight:600;font-size:14.5px}
+  .badge{font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:3px 8px;border-radius:999px}
+  .badge.free{background:var(--accent-soft);color:var(--accent)}
+  .badge.pro{background:var(--gold-soft);color:var(--gold)}
+  .tpl-meta .use{margin-left:auto;font-size:12.5px;color:var(--ink-3);font-weight:600}
+
+  /* ---------- Features / steps ---------- */
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .feature{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s}
+  .feature:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(19,26,46,.10);border-color:color-mix(in srgb, var(--accent) 35%, var(--line))}
+  .feature .ic{
+    width:48px;height:48px;border-radius:13px;display:grid;place-items:center;margin-bottom:14px;position:relative;
+  }
+  .feature .ic svg{width:23px;height:23px}
+  .feature .ic.blue{background:#e3ebff;color:#2f5cff}
+  .feature .ic.violet{background:#ede7ff;color:#6d3df0}
+  .feature .ic.teal{background:#d9f5ec;color:#0a7a5c}
+  .feature .ic.amber{background:#fdf0c8;color:#9a6b00}
+  .feature .ic.rose{background:#ffe4e6;color:#be123c}
+  .feature .ic.navy{background:#26314d;color:#fff}
+  @media (prefers-color-scheme: dark){
+    .feature .ic.blue{background:#1b2a52;color:#7aa0ff}.feature .ic.violet{background:#2a1f52;color:#b39aff}
+    .feature .ic.teal{background:#0f2e26;color:#4adeb5}.feature .ic.amber{background:#2c2410;color:#f0c94a}
+    .feature .ic.rose{background:#3a1620;color:#fb8a9b}.feature .ic.navy{background:#e8ecf5;color:#16203a}
+  }
+  .feature h3{margin:0 0 6px;font-size:16px}
+  .feature p{margin:0;color:var(--ink-2);font-size:14.5px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;counter-reset:step}
+  .step{padding:22px;border:1px dashed var(--line);border-radius:var(--radius);background:var(--surface-2)}
+  .step .n{
+    width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);
+    display:grid;place-items:center;font-family:"Sora",sans-serif;font-weight:700;font-size:14px;margin-bottom:10px;
+  }
+  .step h3{margin:0 0 5px;font-size:16px}
+  .step p{margin:0;color:var(--ink-2);font-size:14.5px}
+
+  /* ---------- Pairing band ---------- */
+  .band{
+    background:var(--surface);border:1px solid var(--line);border-radius:18px;
+    padding:34px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+  }
+  @media (max-width:700px){ .band{grid-template-columns:1fr} }
+  .band h2{margin:0 0 8px;font-size:clamp(22px,3vw,28px)}
+  .band p{margin:0;color:var(--ink-2);max-width:560px}
+
+  /* ---------- Pricing ---------- */
+  .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:820px;margin:0 auto}
+  .price-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .price-card.featured{border:2px solid var(--accent);position:relative}
+  .price-card .tag{
+    position:absolute;top:-13px;left:24px;background:var(--accent);color:#fff;
+    font-size:11.5px;font-weight:700;letter-spacing:.05em;padding:4px 11px;border-radius:999px;
+  }
+  .price-card h3{margin:0 0 4px;font-size:18px}
+  .price-card .amt{font-family:"Sora",sans-serif;font-size:38px;font-weight:800;margin:8px 0 2px}
+  .price-card .amt small{font-size:14px;font-weight:600;color:var(--ink-3)}
+  .price-card ul{list-style:none;margin:18px 0 22px;padding:0}
+  .price-card li{padding:6px 0 6px 26px;position:relative;font-size:14.5px;color:var(--ink-2)}
+  .price-card li::before{content:"✓";position:absolute;left:2px;color:var(--accent);font-weight:700}
+  .price-card .btn{width:100%;justify-content:center}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:760px;margin:0 auto}
+  details{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin-bottom:10px;padding:0 20px}
+  summary{cursor:pointer;font-weight:600;padding:16px 0;font-family:"Sora",sans-serif;font-size:15.5px;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  details p{margin:0 0 16px;color:var(--ink-2);font-size:14.5px}
+
+  footer.site{border-top:1px solid var(--line);padding:34px 0 44px;margin-top:20px}
+  .foot{display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between;color:var(--ink-3);font-size:13.5px}
+  .foot a{color:var(--ink-2);text-decoration:none;font-weight:500}
+  .foot a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="preview-flag">✦ <b>FINAL PREVIEW</b> &nbsp;·&nbsp; Cover Letter Builder — sister product to Resume Builder &nbsp;·&nbsp; PixelForge Studio</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/><path d="M17.5 15.5l1.2-3.2 2 2-3.2 1.2z" fill="currentColor" stroke="none"/></svg></span><span class="brand-text">Cover Letter Builder<small>By PixelForge Studio</small></span></a>
+    <nav>
+      <a href="#builder">Builder</a>
+      <a href="#templates">Templates</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#builder">Write yours free</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-badge"><span class="pill">NEW</span> Sister app to Resume Builder <span style="color:var(--ink-3);font-weight:500">· Free to start · No account</span></div>
+      <h1>The cover letter that sounds like <span class="hl">you</span> — not a template.</h1>
+      <p class="sub">Answer a few quick questions and get a tailored, ready-to-send cover letter in minutes. Templates that match your resume, exported as a perfect A4 PDF.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#builder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg> Start writing — it's free</a>
+        <a class="btn btn-ghost" href="#templates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg> Browse templates</a>
+      </div>
+      <div class="proof">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>5 templates free forever</b></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No account needed</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No ads · Works offline</span>
+      </div>
+      <div class="hero-stats" aria-label="At a glance">
+        <div><b>9</b><span>Matched templates</span></div>
+        <div><b>3</b><span>Writing tones</span></div>
+        <div><b>~2 min</b><span>To a finished letter</span></div>
+        <div><b>$9</b><span>Premium · one-time</span></div>
+      </div>
+      <div class="logos">
+        <p>Made for applications to companies like</p>
+        <div class="logo-row" aria-label="Example destination companies">
+          <span class="logo-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 12.2c0-1-.36-1.83-.96-2.53H12v4.8h5.36a4.6 4.6 0 0 1-2 3.27v2.72h3.24c1.9-1.75 3-4.32 3-8.26z" opacity=".9"/><path d="M12 22c2.7 0 4.96-.9 6.62-2.43l-3.24-2.5c-.9.6-2.05.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.06v2.58A10 10 0 0 0 12 22z" opacity=".65"/><path d="M6.4 13.9a6 6 0 0 1 0-3.8V7.53H3.06a10 10 0 0 0 0 8.94l3.35-2.57z" opacity=".45"/><path d="M12 5.98c1.47 0 2.78.5 3.82 1.5l2.86-2.86A10 10 0 0 0 3.06 7.53l3.35 2.58C7.2 7.74 9.4 5.98 12 5.98z" opacity=".8"/></svg><span class="lg">Google</span></span>
+          <span class="logo-item"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8.5" height="8.5" rx="1"/><rect x="12.5" y="3" width="8.5" height="8.5" rx="1" opacity=".65"/><rect x="3" y="12.5" width="8.5" height="8.5" rx="1" opacity=".65"/><rect x="12.5" y="12.5" width="8.5" height="8.5" rx="1" opacity=".4"/></svg><span class="lg">Microsoft</span></span>
+          <span class="logo-item serif"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg><span class="lg" style="font-size:16.5px">Shopify</span></span>
+          <span class="logo-item mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 18 9 6l3 7 3-7 4 12"/></svg><span>stripe</span></span>
+          <span class="logo-item"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" opacity=".25"/><circle cx="12" cy="12" r="4.5"/></svg><span class="lg">Notion</span></span>
+          <span class="logo-item serif"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17c3-1 5-4 6-8 2 5 5 8 9 8"/><path d="M6 21h13" opacity=".6"/></svg><span class="lg" style="font-style:italic">airbnb</span></span>
+          <span class="logo-item mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M8 12h8M12 8v8" opacity=".7"/></svg><span>FIGMA</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILDER -->
+  <section id="builder">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg> Live demo</span>
+        <h2>Try the builder</h2>
+        <p>This is a live taste of the app — answer the prompts and watch your letter write itself beside them.</p>
+      </div>
+      <div class="builder">
+        <form class="panel" id="letterForm" autocomplete="off">
+          <h3>Your details</h3>
+          <p class="hint">Everything updates the letter instantly. Nothing leaves your device.</p>
+          <div class="row2">
+            <div class="field">
+              <label for="fName">Your name</label>
+              <input id="fName" type="text" value="Ayesha Khan" />
+            </div>
+            <div class="field">
+              <label for="fContact">Email · City</label>
+              <input id="fContact" type="text" value="ayesha.khan@email.com · Lahore" />
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="fRole">Job you're applying for</label>
+              <input id="fRole" type="text" value="Marketing Executive" />
+            </div>
+            <div class="field">
+              <label for="fCompany">Company</label>
+              <input id="fCompany" type="text" value="BrightNest Studio" />
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="fManager">Hiring manager (optional)</label>
+              <input id="fManager" type="text" value="Ms. Rahman" />
+            </div>
+            <div class="field">
+              <label for="fYears">Experience</label>
+              <input id="fYears" type="text" value="3 years" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="fWin">Your strongest result</label>
+            <textarea id="fWin">grew our Instagram audience from 4,000 to 38,000 followers and doubled online sales through weekly campaign launches</textarea>
+          </div>
+          <div class="field">
+            <label for="fWhy">Why this company? (one line)</label>
+            <input id="fWhy" type="text" value="your focus on honest, design-led products is exactly the kind of brand I want to help grow" />
+          </div>
+          <div class="field">
+            <label>Tone</label>
+            <div class="seg" id="toneSeg">
+              <button type="button" data-tone="professional" aria-pressed="true">Professional</button>
+              <button type="button" data-tone="confident" aria-pressed="false">Confident</button>
+              <button type="button" data-tone="warm" aria-pressed="false">Warm</button>
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:0">
+            <label>Template</label>
+            <div class="tpl-pick" id="tplPick">
+              <button type="button" data-tpl="t-minimal" aria-pressed="true">Minimal</button>
+              <button type="button" data-tpl="t-modern" aria-pressed="false">Modern</button>
+              <button type="button" data-tpl="t-classic" aria-pressed="false">Classic</button>
+              <button type="button" data-tpl="t-slate" aria-pressed="false">Slate <span class="pro">PRO</span></button>
+              <button type="button" data-tpl="t-paper" aria-pressed="false">Paper</button>
+              <button type="button" data-tpl="t-fern" aria-pressed="false">Fern</button>
+              <button type="button" data-tpl="t-onyx" aria-pressed="false">Onyx <span class="pro">PRO</span></button>
+              <button type="button" data-tpl="t-bold" aria-pressed="false">Bold <span class="pro">PRO</span></button>
+              <button type="button" data-tpl="t-executive" aria-pressed="false">Executive <span class="pro">PRO</span></button>
+            </div>
+          </div>
+        </form>
+
+        <div class="sheet-wrap">
+          <div class="sheet" id="sheet">
+            <div class="l-head">
+              <div class="l-name" id="lName">Ayesha Khan</div>
+              <div class="l-contact" id="lContact">ayesha.khan@email.com · Lahore</div>
+            </div>
+            <p id="lGreeting">Dear Ms. Rahman,</p>
+            <p id="lP1"></p>
+            <p id="lP2"></p>
+            <p id="lP3"></p>
+            <p id="lClose"></p>
+            <div class="l-sign">
+              <p style="margin-bottom:2px">Sincerely,</p>
+              <div class="l-sig" id="lSig">Ayesha Khan</div>
+            </div>
+          </div>
+          <div class="sheet-bar">
+            <span class="wc" id="wordCount"></span>
+            <button class="btn btn-ghost btn-sm" id="copyBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy letter</button>
+            <button class="btn btn-primary btn-sm" id="dlBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg> Download (.txt)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLATES -->
+  <section id="templates" style="padding-top:10px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg> 9 designs</span>
+        <h2>Templates that match your resume</h2>
+        <p>Every design has a twin in Resume Builder, so your application arrives as one matched set. Tap any template to try it in the builder.</p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" style="padding-top:10px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg> Why it works</span>
+        <h2>Built for the way hiring actually works</h2>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="ic blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+          <h3>Guided writing, not blank pages</h3>
+          <p>Short prompts — role, company, your best result — become a structured letter with an opening hook, a proof paragraph, and a confident close.</p>
+        </div>
+        <div class="feature">
+          <div class="ic violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg></div>
+          <h3>Three tones, one tap</h3>
+          <p>Professional for corporate roles, Confident for startups and sales, Warm for creative and people-first teams. Same facts, right voice.</p>
+        </div>
+        <div class="feature">
+          <div class="ic teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h3>Matches your resume</h3>
+          <p>Pick the same design name as your Resume Builder template and the fonts, colors, and header line up exactly.</p>
+        </div>
+        <div class="feature">
+          <div class="ic amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 11v7M9.5 15.5 12 18l2.5-2.5"/></svg></div>
+          <h3>Perfect A4 PDF export</h3>
+          <p>One tap exports a print-ready A4 PDF with correct margins — or copy the text straight into an application portal.</p>
+        </div>
+        <div class="feature">
+          <div class="ic rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg></div>
+          <h3>Private by design</h3>
+          <p>Your letters live on your device only. No account, no cloud copy of your job hunt, works fully offline.</p>
+        </div>
+        <div class="feature">
+          <div class="ic navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="13" height="13" rx="2.5"/><path d="M16 8V6a2.5 2.5 0 0 0-2.5-2.5H6A2.5 2.5 0 0 0 3.5 6v7.5A2.5 2.5 0 0 0 6 16h2"/><path d="M12 12h5M12 16h5"/></svg></div>
+          <h3>One letter per application</h3>
+          <p>Save a version for every job you chase, duplicate it for similar roles, and tweak the company paragraph in seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>From blank page to sent in three steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Answer a few prompts</h3><p>Your name, the role, the company, and the result you're proudest of. Thirty seconds, no staring at a cursor.</p></div>
+        <div class="step"><div class="n">2</div><h3>Pick a tone and template</h3><p>Choose the voice that fits the company and the design that matches your resume.</p></div>
+        <div class="step"><div class="n">3</div><h3>Export and send</h3><p>Download the A4 PDF or copy the text into the application form. Done — on to the next one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIRING BAND -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>Already using Resume Builder?</h2>
+          <p>Your cover letter picks up the same template names, accent colors, and PDF quality — so the two documents look like they were designed together. Because they were.</p>
+        </div>
+        <a class="btn btn-ghost" href="https://abdulsami026-crypto.github.io/resume-builder-web/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg> Open Resume Builder <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" style="padding-top:10px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12.6 2.9 21 11.3a2 2 0 0 1 0 2.8l-6.9 6.9a2 2 0 0 1-2.8 0L2.9 12.6A2 2 0 0 1 2.3 11L3 4.2A2 2 0 0 1 4.8 2.3l6.8.6a2 2 0 0 1 1 .0z"/><circle cx="7.5" cy="7.5" r="1.2" fill="currentColor"/></svg> One-time · No subscription</span>
+        <h2>Simple pricing, same as Resume Builder</h2>
+        <p>Start free. Unlock everything once — no subscription, ever.</p>
+      </div>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Free</h3>
+          <div class="amt">$0 <small>forever</small></div>
+          <ul>
+            <li>5 templates: Minimal, Modern, Classic, Paper, Fern</li>
+            <li>All three writing tones</li>
+            <li>A4 PDF export</li>
+            <li>Unlimited letters, saved on your device</li>
+          </ul>
+          <a class="btn btn-ghost" href="#builder">Start free</a>
+        </div>
+        <div class="price-card featured">
+          <span class="tag">BEST VALUE</span>
+          <h3>Premium</h3>
+          <div class="amt">$9 <small>one-time</small></div>
+          <ul>
+            <li>All 9 templates, including Slate, Onyx, Bold &amp; Executive</li>
+            <li>Designs matched to your Resume Builder templates</li>
+            <li>Every future template included</li>
+            <li>One payment — yours forever, no subscription</li>
+          </ul>
+          <button class="btn btn-primary" id="buyBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2M15 15l1.2 1.2L19 13.5"/></svg> Unlock Premium — $9</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:10px">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Is this the same app as Resume Builder?</summary>
+          <p>No — it's a separate app and a separate one-time purchase, built on the same engine. They share template designs so your resume and cover letter match, and each site links to the other.</p>
+        </details>
+        <details>
+          <summary>Do I need to be a good writer?</summary>
+          <p>No. You answer short prompts about the job and your experience; the builder turns them into a structured letter. You can edit every sentence before exporting.</p>
+        </details>
+        <details>
+          <summary>What does the free version include?</summary>
+          <p>Five templates, all three tones, unlimited letters, and A4 PDF export — free forever, no account and no ads. Premium unlocks the full template library for a single $9 payment.</p>
+        </details>
+        <details>
+          <summary>Where are my letters stored?</summary>
+          <p>On your device only. The builder works fully offline and nothing you write is uploaded anywhere.</p>
+        </details>
+        <details>
+          <summary>Can I reuse a letter for another job?</summary>
+          <p>Yes — duplicate any saved letter, swap the company and role, adjust the middle paragraph, and export a fresh copy in under a minute.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <span style="display:inline-flex;align-items:center;gap:8px"><span style="width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,#2f5cff,#7c4dff);display:grid;place-items:center;color:#fff"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span> © 2026 Cover Letter Builder · A PixelForge Studio tool</span>
+    <span>
+      <a href="https://abdulsami026-crypto.github.io/resume-builder-web/" target="_blank" rel="noopener">Resume Builder</a>
+      &nbsp;·&nbsp; <a href="#pricing">Pricing</a>
+      &nbsp;·&nbsp; <a href="#faq">FAQ</a>
+    </span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var state = { tone: "professional", tpl: "t-minimal" };
+
+  var tones = {
+    professional: {
+      p1: function(d){ return "I am writing to apply for the " + d.role + " position at " + d.company + ". With " + d.years + " of experience in this field, I bring a record of results that I believe aligns closely with what your team is looking for."; },
+      p2: function(d){ return "In my recent work, I " + d.win + ". That experience taught me how to deliver measurable outcomes under real deadlines — skills I would put to work for " + d.company + " from the first week."; },
+      p3: function(d){ return "I was drawn to " + d.company + " because " + d.why + ". I would welcome the opportunity to discuss how my experience could contribute to your goals."; },
+      close: "Thank you for your time and consideration. I look forward to the possibility of speaking with you."
+    },
+    confident: {
+      p1: function(d){ return "Your search for a " + d.role + " ends with a candidate who delivers. I have " + d.years + " of experience turning briefs into results, and " + d.company + " is exactly where I want to do it next."; },
+      p2: function(d){ return "The proof: I " + d.win + ". I don't deal in vague promises — I deal in numbers, deadlines met, and work that moves the business forward."; },
+      p3: function(d){ return "I chose to apply to " + d.company + " because " + d.why + ". Give me thirty minutes and I'll show you exactly what I'd do in my first ninety days."; },
+      close: "I'm ready when you are. Let's talk."
+    },
+    warm: {
+      p1: function(d){ return "When I saw the " + d.role + " opening at " + d.company + ", I knew I had to apply. Over the past " + d.years + ", I've built my career around work I genuinely care about — and this role brings all of it together."; },
+      p2: function(d){ return "One highlight I'm especially proud of: I " + d.win + ". Beyond the numbers, it was the collaboration behind it that reminded me why I love this work."; },
+      p3: function(d){ return "What excites me most about " + d.company + " is that " + d.why + ". I'd love the chance to bring my energy and experience to a team that works that way."; },
+      close: "Thank you so much for considering my application — I'd be delighted to chat further."
+    }
+  };
+
+  function data(){
+    return {
+      name: $("fName").value.trim() || "Your Name",
+      contact: $("fContact").value.trim(),
+      role: $("fRole").value.trim() || "the role",
+      company: $("fCompany").value.trim() || "your company",
+      manager: $("fManager").value.trim(),
+      years: $("fYears").value.trim() || "several years",
+      win: ($("fWin").value.trim() || "delivered results my team could measure").replace(/\.$/,""),
+      why: ($("fWhy").value.trim() || "your work stands out in the industry").replace(/\.$/,"")
+    };
+  }
+
+  function letterText(){
+    var d = data(), t = tones[state.tone];
+    var lines = [
+      d.name,
+      d.contact,
+      "",
+      d.manager ? "Dear " + d.manager + "," : "Dear Hiring Manager,",
+      "",
+      t.p1(d), "",
+      t.p2(d), "",
+      t.p3(d), "",
+      t.close, "",
+      "Sincerely,",
+      d.name
+    ];
+    return lines.join("\n");
+  }
+
+  function render(){
+    var d = data(), t = tones[state.tone];
+    $("lName").textContent = d.name;
+    $("lContact").textContent = d.contact;
+    $("lGreeting").textContent = d.manager ? "Dear " + d.manager + "," : "Dear Hiring Manager,";
+    $("lP1").textContent = t.p1(d);
+    $("lP2").textContent = t.p2(d);
+    $("lP3").textContent = t.p3(d);
+    $("lClose").textContent = t.close;
+    $("lSig").textContent = d.name;
+    var sheet = $("sheet");
+    sheet.className = "sheet " + state.tpl;
+    var words = letterText().split(/\s+/).filter(Boolean).length;
+    $("wordCount").textContent = words + " words · reads in about " + Math.max(1, Math.round(words/200)) + " min";
+  }
+
+  ["fName","fContact","fRole","fCompany","fManager","fYears","fWin","fWhy"].forEach(function(id){
+    $(id).addEventListener("input", render);
+  });
+  $("letterForm").addEventListener("submit", function(e){ e.preventDefault(); });
+
+  function segWire(id, attr, key){
+    var box = $(id);
+    box.addEventListener("click", function(e){
+      var btn = e.target.closest("button"); if(!btn) return;
+      box.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-pressed","false"); });
+      btn.setAttribute("aria-pressed","true");
+      state[key] = btn.getAttribute(attr);
+      render();
+    });
+  }
+  segWire("toneSeg","data-tone","tone");
+  segWire("tplPick","data-tpl","tpl");
+
+  function applyTemplate(tpl, name){
+    state.tpl = tpl;
+    var pick = $("tplPick");
+    pick.querySelectorAll("button").forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-tpl") === tpl ? "true" : "false");
+    });
+    render();
+    document.getElementById("builder").scrollIntoView({behavior:"smooth"});
+    toast("Template applied: " + name);
+  }
+
+  /* Gallery */
+  var templates = [
+    {name:"Minimal", cls:"m-minimal", tpl:"t-minimal", pro:false},
+    {name:"Modern", cls:"m-modern", tpl:"t-modern", pro:false},
+    {name:"Classic", cls:"m-classic", tpl:"t-classic", pro:false},
+    {name:"Paper", cls:"m-paper", tpl:"t-paper", pro:false},
+    {name:"Fern", cls:"m-fern", tpl:"t-fern", pro:false},
+    {name:"Slate", cls:"m-slate", tpl:"t-slate", pro:true},
+    {name:"Onyx", cls:"m-onyx", tpl:"t-onyx", pro:true},
+    {name:"Bold", cls:"m-bold", tpl:"t-bold", pro:true},
+    {name:"Executive", cls:"m-executive", tpl:"t-executive", pro:true}
+  ];
+  var linesHtml = '<div class="m-line"></div><div class="m-line"></div><div class="m-line short"></div><div class="m-line"></div><div class="m-line"></div><div class="m-line short"></div><div class="m-line"></div><div class="m-line short"></div>';
+  var gallery = $("gallery");
+  templates.forEach(function(t){
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "tpl-card";
+    var head = t.cls === "m-slate"
+      ? '<div class="m-head"><div class="m-name">Your Name</div><div class="m-line" style="width:60%"></div></div>'
+      : '<div class="m-name">Your Name</div>';
+    btn.innerHTML =
+      '<div class="tpl-thumb"><div class="mini ' + t.cls + '">' + head + linesHtml + '</div></div>' +
+      '<div class="tpl-meta"><span class="tname">' + t.name + '</span>' +
+      '<span class="badge ' + (t.pro ? "pro" : "free") + '">' + (t.pro ? "PRO" : "FREE") + '</span>' +
+      '<span class="use">Try it →</span></div>';
+    btn.addEventListener("click", function(){ applyTemplate(t.tpl, t.name); });
+    gallery.appendChild(btn);
+  });
+
+  /* Toast */
+  var toastTimer = null;
+  function toast(msg){
+    var el = $("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 2600);
+  }
+
+  /* Copy + download */
+  $("copyBtn").addEventListener("click", function(){
+    var text = letterText();
+    function done(){ toast("Letter copied — paste it anywhere."); }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); }
+      catch(e){ toast("Copy didn't work here — select the letter text manually."); }
+      document.body.removeChild(ta);
+    }
+  });
+  $("dlBtn").addEventListener("click", function(){
+    var blob = new Blob([letterText()], {type:"text/plain;charset=utf-8"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "cover-letter-" + (data().company || "application").toLowerCase().replace(/[^a-z0-9]+/g,"-") + ".txt";
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 800);
+    toast("Downloaded — the full app exports a print-ready A4 PDF.");
+  });
+  $("buyBtn").addEventListener("click", function(){
+    toast("Preview only — at launch this button opens the $9 Gumroad checkout.");
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

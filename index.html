@@ -196,6 +196,7 @@
   }
   .tpl-pick button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
   .tpl-pick button .pro{display:block;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:.06em}
+  .tpl-pick button .pro svg{width:9px;height:9px;margin-right:2px;vertical-align:-.5px}
 
   /* The letter sheet */
   .sheet-wrap{position:sticky;top:88px}
@@ -469,12 +470,12 @@
               <button type="button" data-tpl="t-minimal" aria-pressed="true">Minimal</button>
               <button type="button" data-tpl="t-modern" aria-pressed="false">Modern</button>
               <button type="button" data-tpl="t-classic" aria-pressed="false">Classic</button>
-              <button type="button" data-tpl="t-slate" aria-pressed="false">Slate <span class="pro">PRO</span></button>
+              <button type="button" data-tpl="t-slate" data-pro="1" data-name="Slate" aria-pressed="false">Slate <span class="pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>PRO</span></button>
               <button type="button" data-tpl="t-paper" aria-pressed="false">Paper</button>
               <button type="button" data-tpl="t-fern" aria-pressed="false">Fern</button>
-              <button type="button" data-tpl="t-onyx" aria-pressed="false">Onyx <span class="pro">PRO</span></button>
-              <button type="button" data-tpl="t-bold" aria-pressed="false">Bold <span class="pro">PRO</span></button>
-              <button type="button" data-tpl="t-executive" aria-pressed="false">Executive <span class="pro">PRO</span></button>
+              <button type="button" data-tpl="t-onyx" data-pro="1" data-name="Onyx" aria-pressed="false">Onyx <span class="pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>PRO</span></button>
+              <button type="button" data-tpl="t-bold" data-pro="1" data-name="Bold" aria-pressed="false">Bold <span class="pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>PRO</span></button>
+              <button type="button" data-tpl="t-executive" data-pro="1" data-name="Executive" aria-pressed="false">Executive <span class="pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>PRO</span></button>
             </div>
           </div>
         </form>
@@ -498,7 +499,8 @@
           <div class="sheet-bar">
             <span class="wc" id="wordCount"></span>
             <button class="btn btn-ghost btn-sm" id="copyBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy letter</button>
-            <button class="btn btn-primary btn-sm" id="dlBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg> Download (.txt)</button>
+            <button class="btn btn-primary btn-sm" id="dlPdfBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg> Download PDF</button>
+            <button class="btn btn-ghost btn-sm" id="dlDocxBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg> Word (.docx)</button>
           </div>
         </div>
       </div>
@@ -511,7 +513,7 @@
       <div class="sec-head">
         <span class="sec-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg> 9 designs</span>
         <h2>Templates that match your resume</h2>
-        <p>Every design has a twin in Resume Builder, so your application arrives as one matched set. Tap any template to try it in the builder.</p>
+        <p>Every design has a twin in Resume Builder, so your application arrives as one matched set. Tap a free template to try it in the builder — PRO designs unlock with Premium.</p>
       </div>
       <div class="gallery" id="gallery"></div>
     </div>
@@ -542,8 +544,8 @@
         </div>
         <div class="feature">
           <div class="ic amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 11v7M9.5 15.5 12 18l2.5-2.5"/></svg></div>
-          <h3>Perfect A4 PDF export</h3>
-          <p>One tap exports a print-ready A4 PDF with correct margins — or copy the text straight into an application portal.</p>
+          <h3>PDF &amp; Word export</h3>
+          <p>One tap exports a print-ready A4 PDF or an editable Word (.docx) file — or copy the text straight into an application portal.</p>
         </div>
         <div class="feature">
           <div class="ic rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg></div>
@@ -568,7 +570,7 @@
       <div class="steps">
         <div class="step"><div class="n">1</div><h3>Answer a few prompts</h3><p>Your name, the role, the company, and the result you're proudest of. Thirty seconds, no staring at a cursor.</p></div>
         <div class="step"><div class="n">2</div><h3>Pick a tone and template</h3><p>Choose the voice that fits the company and the design that matches your resume.</p></div>
-        <div class="step"><div class="n">3</div><h3>Export and send</h3><p>Download the A4 PDF or copy the text into the application form. Done — on to the next one.</p></div>
+        <div class="step"><div class="n">3</div><h3>Export and send</h3><p>Download the A4 PDF or Word file, or copy the text into the application form. Done — on to the next one.</p></div>
       </div>
     </div>
   </section>
@@ -601,7 +603,7 @@
           <ul>
             <li>5 templates: Minimal, Modern, Classic, Paper, Fern</li>
             <li>All three writing tones</li>
-            <li>A4 PDF export</li>
+            <li>PDF &amp; Word (.docx) export</li>
             <li>Unlimited letters, saved on your device</li>
           </ul>
           <a class="btn btn-ghost" href="#builder">Start free</a>
@@ -639,7 +641,7 @@
         </details>
         <details>
           <summary>What does the free version include?</summary>
-          <p>Five templates, all three tones, unlimited letters, and A4 PDF export — free forever, no account and no ads. Premium unlocks the full template library for a single $9 payment.</p>
+          <p>Five templates, all three tones, unlimited letters, and PDF &amp; Word (.docx) export — free forever, no account and no ads. Premium unlocks the full template library for a single $9 payment.</p>
         </details>
         <details>
           <summary>Where are my letters stored?</summary>
@@ -747,10 +749,17 @@
   });
   $("letterForm").addEventListener("submit", function(e){ e.preventDefault(); });
 
+  /* Premium gate — PRO templates stay locked until Premium is unlocked */
+  function proGate(name){
+    toast(name + " is a Premium template — unlock all 9 designs for $9, one-time.", 3600);
+    document.getElementById("pricing").scrollIntoView({behavior:"smooth"});
+  }
+
   function segWire(id, attr, key){
     var box = $(id);
     box.addEventListener("click", function(e){
       var btn = e.target.closest("button"); if(!btn) return;
+      if (btn.hasAttribute("data-pro")){ proGate(btn.getAttribute("data-name") || "That template"); return; }
       box.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-pressed","false"); });
       btn.setAttribute("aria-pressed","true");
       state[key] = btn.getAttribute(attr);
@@ -760,7 +769,8 @@
   segWire("toneSeg","data-tone","tone");
   segWire("tplPick","data-tpl","tpl");
 
-  function applyTemplate(tpl, name){
+  function applyTemplate(tpl, name, pro){
+    if (pro){ proGate(name); return; }
     state.tpl = tpl;
     var pick = $("tplPick");
     pick.querySelectorAll("button").forEach(function(b){
@@ -796,19 +806,19 @@
       '<div class="tpl-thumb"><div class="mini ' + t.cls + '">' + head + linesHtml + '</div></div>' +
       '<div class="tpl-meta"><span class="tname">' + t.name + '</span>' +
       '<span class="badge ' + (t.pro ? "pro" : "free") + '">' + (t.pro ? "PRO" : "FREE") + '</span>' +
-      '<span class="use">Try it →</span></div>';
-    btn.addEventListener("click", function(){ applyTemplate(t.tpl, t.name); });
+      '<span class="use">' + (t.pro ? "Unlock" : "Try it →") + '</span></div>';
+    btn.addEventListener("click", function(){ applyTemplate(t.tpl, t.name, t.pro); });
     gallery.appendChild(btn);
   });
 
   /* Toast */
   var toastTimer = null;
-  function toast(msg){
+  function toast(msg, ms){
     var el = $("toast");
     el.textContent = msg;
     el.classList.add("show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 2600);
+    toastTimer = setTimeout(function(){ el.classList.remove("show"); }, ms || 2600);
   }
 
   /* Copy + download */
@@ -827,16 +837,158 @@
       document.body.removeChild(ta);
     }
   });
-  $("dlBtn").addEventListener("click", function(){
-    var blob = new Blob([letterText()], {type:"text/plain;charset=utf-8"});
+  /* ---------- Exports: real PDF + DOCX, generated on-device ---------- */
+  function fileBase(){
+    return "cover-letter-" + (data().company || "application").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+  }
+  function saveBlob(blob, name){
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
-    a.href = url;
-    a.download = "cover-letter-" + (data().company || "application").toLowerCase().replace(/[^a-z0-9]+/g,"-") + ".txt";
+    a.href = url; a.download = name;
     document.body.appendChild(a); a.click();
     document.body.removeChild(a);
     setTimeout(function(){ URL.revokeObjectURL(url); }, 800);
-    toast("Downloaded — the full app exports a print-ready A4 PDF.");
+  }
+
+  /* PDF — minimal A4 writer (Helvetica, wrapped, paginated) */
+  function pdfSafe(s){
+    return s.replace(/—/g,"--").replace(/·/g,"-").replace(/[‘’]/g,"'").replace(/[“”]/g,'"')
+            .replace(/…/g,"...").replace(/[^\x20-\x7E]/g,"")
+            .replace(/\\/g,"\\\\").replace(/\(/g,"\\(").replace(/\)/g,"\\)");
+  }
+  var measureCtx = document.createElement("canvas").getContext("2d");
+  function wrapLine(text, fontCss, maxW){
+    measureCtx.font = fontCss;
+    var words = text.split(/\s+/).filter(Boolean), out = [], cur = "";
+    words.forEach(function(w){
+      var t = cur ? cur + " " + w : w;
+      if (cur && measureCtx.measureText(t).width > maxW){ out.push(cur); cur = w; }
+      else { cur = t; }
+    });
+    if (cur) out.push(cur);
+    return out.length ? out : [""];
+  }
+  function makePdf(){
+    var raw = letterText().split("\n");
+    var pageW = 595.28, pageH = 841.89, mL = 56, mR = 56, top = 64, bottom = 56;
+    var maxW = pageW - mL - mR;
+    var styled = [];
+    raw.forEach(function(line, i){
+      if (i === 0){ styled.push({text:line, font:"F2", size:16, blank:false}); return; }
+      if (i === 1){ styled.push({text:line, font:"F1", size:9.5, blank:false}); return; }
+      if (line === ""){ styled.push({text:"", font:"F1", size:11, blank:true}); return; }
+      wrapLine(line, "11pt Helvetica", maxW).forEach(function(p){
+        styled.push({text:p, font:"F1", size:11, blank:false});
+      });
+    });
+    var pages = [], ops = [], y = pageH - top;
+    function flush(){ pages.push(ops.join("\n")); ops = []; y = pageH - top; }
+    styled.forEach(function(L){
+      var lh = L.blank ? 8 : L.size * 1.5;
+      if (y - lh < bottom) flush();
+      if (!L.blank){
+        ops.push("BT /" + L.font + " " + L.size + " Tf 1 0 0 1 " + mL.toFixed(2) + " " + (y - L.size).toFixed(2) + " Tm (" + pdfSafe(L.text) + ") Tj ET");
+      }
+      y -= lh;
+    });
+    flush();
+    var objs = [];
+    objs[1] = "<< /Type /Catalog /Pages 2 0 R >>";
+    var kids = pages.map(function(_, i){ return (5 + i * 2) + " 0 R"; }).join(" ");
+    objs[2] = "<< /Type /Pages /Kids [" + kids + "] /Count " + pages.length + " >>";
+    objs[3] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
+    objs[4] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>";
+    pages.forEach(function(content, i){
+      var pNum = 5 + i * 2, cNum = 6 + i * 2;
+      objs[pNum] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + pageW + " " + pageH + "] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents " + cNum + " 0 R >>";
+      objs[cNum] = "<< /Length " + content.length + " >>\nstream\n" + content + "\nendstream";
+    });
+    var pdf = "%PDF-1.4\n", offsets = [0], n, m;
+    for (n = 1; n < objs.length; n++){
+      offsets[n] = pdf.length;
+      pdf += n + " 0 obj\n" + objs[n] + "\nendobj\n";
+    }
+    var xrefPos = pdf.length;
+    pdf += "xref\n0 " + objs.length + "\n0000000000 65535 f \n";
+    for (m = 1; m < objs.length; m++){
+      pdf += ("0000000000" + offsets[m]).slice(-10) + " 00000 n \n";
+    }
+    pdf += "trailer\n<< /Size " + objs.length + " /Root 1 0 R >>\nstartxref\n" + xrefPos + "\n%%EOF";
+    return new Blob([pdf], {type:"application/pdf"});
+  }
+
+  /* DOCX — stored-entry ZIP of WordprocessingML parts */
+  function xmlEsc(s){
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  var crcTable = null;
+  function crc32(bytes){
+    if (!crcTable){
+      crcTable = [];
+      for (var n = 0; n < 256; n++){
+        var c = n;
+        for (var k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+        crcTable[n] = c >>> 0;
+      }
+    }
+    var crc = 0xFFFFFFFF;
+    for (var i = 0; i < bytes.length; i++) crc = crcTable[(crc ^ bytes[i]) & 0xFF] ^ (crc >>> 8);
+    return (crc ^ 0xFFFFFFFF) >>> 0;
+  }
+  function zipStore(files){
+    var enc = new TextEncoder();
+    var chunks = [], central = [], offset = 0;
+    function u16(v){ return [v & 0xFF, (v >>> 8) & 0xFF]; }
+    function u32(v){ return [v & 0xFF, (v >>> 8) & 0xFF, (v >>> 16) & 0xFF, (v >>> 24) & 0xFF]; }
+    function pushBytes(b){ chunks.push(b); offset += b.length; }
+    files.forEach(function(f){
+      var name = enc.encode(f.name), bytes = enc.encode(f.data);
+      var crc = crc32(bytes), localOff = offset;
+      pushBytes(new Uint8Array([].concat(u32(0x04034b50), u16(20), u16(0x0800), u16(0), u16(0), u16(0), u32(crc), u32(bytes.length), u32(bytes.length), u16(name.length), u16(0))));
+      pushBytes(name);
+      pushBytes(bytes);
+      central.push({name:name, crc:crc, size:bytes.length, off:localOff});
+    });
+    var cdStart = offset;
+    central.forEach(function(c){
+      pushBytes(new Uint8Array([].concat(u32(0x02014b50), u16(20), u16(20), u16(0x0800), u16(0), u16(0), u16(0), u32(c.crc), u32(c.size), u32(c.size), u16(c.name.length), u16(0), u16(0), u16(0), u16(0), u32(0), u32(c.off))));
+      pushBytes(c.name);
+    });
+    pushBytes(new Uint8Array([].concat(u32(0x06054b50), u16(0), u16(0), u16(central.length), u16(central.length), u32(offset - cdStart), u32(cdStart), u16(0))));
+    return new Blob(chunks, {type:"application/vnd.openxmlformats-officedocument.wordprocessingml.document"});
+  }
+  function makeDocx(){
+    var raw = letterText().split("\n");
+    var paras = raw.map(function(line, i){
+      var ppr = '<w:pPr><w:spacing w:after="160" w:line="300" w:lineRule="auto"/></w:pPr>';
+      if (!line) return "<w:p>" + ppr + "</w:p>";
+      var rpr;
+      if (i === 0) rpr = '<w:rPr><w:b/><w:sz w:val="32"/><w:szCs w:val="32"/></w:rPr>';
+      else if (i === 1) rpr = '<w:rPr><w:sz w:val="19"/><w:color w:val="4A5468"/></w:rPr>';
+      else rpr = '<w:rPr><w:sz w:val="22"/></w:rPr>';
+      return "<w:p>" + ppr + "<w:r>" + rpr + '<w:t xml:space="preserve">' + xmlEsc(line) + "</w:t></w:r></w:p>";
+    }).join("");
+    var doc = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+      '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>' + paras +
+      '<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="720" w:footer="720" w:gutter="0"/></w:sectPr></w:body></w:document>';
+    var types = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+      '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.main+xml"/></Types>';
+    var rels = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+      '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>';
+    return zipStore([
+      {name:"[Content_Types].xml", data:types},
+      {name:"_rels/.rels", data:rels},
+      {name:"word/document.xml", data:doc}
+    ]);
+  }
+
+  $("dlPdfBtn").addEventListener("click", function(){
+    saveBlob(makePdf(), fileBase() + ".pdf");
+    toast("PDF downloaded — print-ready A4 with margins set.");
+  });
+  $("dlDocxBtn").addEventListener("click", function(){
+    saveBlob(makeDocx(), fileBase() + ".docx");
+    toast("Word file downloaded (.docx) — edit it in Word or Google Docs.");
   });
   $("buyBtn").addEventListener("click", function(){
     toast("Preview only — at launch this button opens the $9 Gumroad checkout.");

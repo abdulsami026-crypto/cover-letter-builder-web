@@ -694,7 +694,7 @@
             <li>Every future template included</li>
             <li>One payment — yours forever, no subscription</li>
           </ul>
-          <button class="btn btn-primary" id="buyBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2M15 15l1.2 1.2L19 13.5"/></svg> Unlock Premium — $9</button>
+          <a class="btn btn-primary" id="buyBtn" href="https://sami4196.gumroad.com/l/cover-letter-builder-premium" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2M15 15l1.2 1.2L19 13.5"/></svg> Unlock Premium — $9</a>
         </div>
       </div>
     </div>
@@ -1096,10 +1096,6 @@
     saveBlob(makeDocx(), fileBase() + ".docx");
     toast("Word file downloaded (.docx) — edit it in Word or Google Docs.");
   });
-  $("buyBtn").addEventListener("click", function(){
-    toast("Preview only — at launch this button opens the $9 Gumroad checkout.");
-  });
-
   render();
 })();
 </script>

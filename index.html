@@ -189,7 +189,7 @@
     padding:7px 13px;border-radius:999px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
   }
   .seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-  .tpl-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .tpl-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-height:252px;overflow-y:auto;padding:2px;scrollbar-width:thin}
   .tpl-pick button{
     border:1.5px solid var(--line);background:var(--bg);border-radius:9px;padding:9px 6px;cursor:pointer;
     font:inherit;font-size:12.5px;font-weight:600;color:var(--ink-2);text-align:center;
@@ -221,7 +221,7 @@
   .sheet.t-classic .l-name{font-family:"Source Serif 4",serif}
   .sheet.t-slate .l-head{background:#26314d;color:#fff;margin:-46px -50px 26px;padding:30px 50px 20px;border-radius:6px 6px 0 0}
   .sheet.t-slate .l-contact{color:#b9c2da}
-  @media (max-width:560px){ .sheet.t-slate .l-head{margin:-30px -24px 22px;padding:22px 24px 14px} }
+  @media (max-width:560px){ .sheet.t-slate .l-head,.sheet.t-aurora .l-head,.sheet.t-midnight .l-head,.sheet.t-aero .l-head{margin:-30px -24px 22px;padding:22px 24px 14px} }
   .sheet.t-paper{background:#fdfaf2}
   .sheet.t-paper .l-head{border-bottom:1px dashed #b8ac8d;padding-bottom:12px}
   .sheet.t-paper .l-name{font-family:"Source Serif 4",serif}
@@ -234,6 +234,47 @@
   .sheet.t-executive .l-name{font-family:"Source Serif 4",serif;color:#5a4632}
   .sheet.t-onyx .l-head{border-left:5px solid #141414;padding-left:16px}
   .sheet.t-onyx .l-name{letter-spacing:.01em}
+  .sheet.t-creative .l-head{border-bottom:3px solid #7c4dff;padding-bottom:12px}
+  .sheet.t-creative .l-name{color:#5b21b6}
+  .sheet.t-compact{font-size:13px;line-height:1.5}
+  .sheet.t-compact .l-head{border-bottom:1px solid #c9cede;padding-bottom:8px;margin-bottom:16px}
+  .sheet.t-compact .l-name{font-size:19px}
+  .sheet.t-compact p{margin-bottom:9px}
+  .sheet.t-elegant{font-family:"Source Serif 4",serif}
+  .sheet.t-elegant .l-head{text-align:center;border-bottom:1px solid #b39b6d;padding-bottom:14px}
+  .sheet.t-elegant .l-name{font-family:"Source Serif 4",serif;letter-spacing:.14em;text-transform:uppercase;font-size:21px}
+  .sheet.t-cobalt .l-head{border-left:5px solid #1d4ed8;padding-left:16px}
+  .sheet.t-cobalt .l-name{color:#1e40af}
+  .sheet.t-stone{background:#fafaf9}
+  .sheet.t-stone .l-head{border-bottom:2px solid #a8a29e;padding-bottom:12px}
+  .sheet.t-stone .l-name{color:#44403c}
+  .sheet.t-portrait .l-head{text-align:center;border-bottom:1px solid #c9cede;padding-bottom:14px}
+  .sheet.t-portrait .l-name{font-size:27px}
+  .sheet.t-timeline .l-head{border-left:3px solid #2f5cff;padding-left:16px}
+  .sheet.t-timeline .l-name{color:#2f5cff}
+  .sheet.t-aurora .l-head{background:linear-gradient(120deg,#2f5cff,#7c4dff);color:#fff;margin:-46px -50px 26px;padding:30px 50px 20px;border-radius:6px 6px 0 0}
+  .sheet.t-aurora .l-contact{color:#dbe4ff}
+  .sheet.t-sunset .l-head{border-top:10px solid #ea580c;padding-top:16px}
+  .sheet.t-sunset .l-name{color:#c2410c}
+  .sheet.t-mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px}
+  .sheet.t-mono .l-name{font-family:inherit;letter-spacing:-.02em}
+  .sheet.t-mono .l-sig{font-family:inherit;font-style:normal}
+  .sheet.t-aero .l-head{background:#e0f2fe;margin:-46px -50px 26px;padding:30px 50px 20px;border-radius:6px 6px 0 0}
+  .sheet.t-aero .l-name{color:#075985}
+  .sheet.t-aero .l-contact{color:#0369a1}
+  .sheet.t-glacier{background:#f4fafd}
+  .sheet.t-glacier .l-head{border-bottom:2px solid #38bdf8;padding-bottom:12px}
+  .sheet.t-glacier .l-name{color:#0369a1}
+  .sheet.t-midnight .l-head{background:#0b1220;color:#fff;margin:-46px -50px 26px;padding:30px 50px 20px;border-radius:6px 6px 0 0}
+  .sheet.t-midnight .l-contact{color:#e8b93e}
+  .sheet.t-ruby .l-head{border-bottom:3px solid #be123c;padding-bottom:12px}
+  .sheet.t-ruby .l-name{color:#9f1239}
+  .sheet.t-linen{background:#faf6ef}
+  .sheet.t-linen .l-head{border-bottom:1px solid #d6c9ae;padding-bottom:12px}
+  .sheet.t-linen .l-name{font-family:"Source Serif 4",serif}
+  .sheet.t-folio{font-family:"Source Serif 4",serif}
+  .sheet.t-folio .l-head{border-top:3px double #1c2333;border-bottom:3px double #1c2333;padding:12px 0;text-align:center}
+  .sheet.t-folio .l-name{font-family:"Source Serif 4",serif}
   .sheet-bar{
     display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;
   }
@@ -275,6 +316,36 @@
   .mini.m-bold{border-top:8px solid #141414}
   .mini.m-executive .m-name{color:#5a4632;font-family:"Source Serif 4",serif}
   .mini.m-executive{border-bottom:3px double #b39b6d}
+  .mini.m-creative{border-top:4px solid #7c4dff}
+  .mini.m-creative .m-name{color:#5b21b6}
+  .mini.m-compact .m-name{font-size:9px}
+  .mini.m-elegant{text-align:center;border-bottom:1px solid #b39b6d}
+  .mini.m-elegant .m-name{font-family:"Source Serif 4",serif;letter-spacing:.12em;text-transform:uppercase;font-size:9px}
+  .mini.m-cobalt{border-left:5px solid #1d4ed8}
+  .mini.m-cobalt .m-name{color:#1e40af}
+  .mini.m-stone{background:#fafaf9;border-bottom:2px solid #a8a29e}
+  .mini.m-stone .m-name{color:#44403c}
+  .mini.m-portrait{text-align:center}
+  .mini.m-portrait .m-name{font-size:12.5px}
+  .mini.m-timeline{border-left:3px solid #2f5cff}
+  .mini.m-timeline .m-name{color:#2f5cff}
+  .mini.m-aurora .m-head{background:linear-gradient(120deg,#2f5cff,#7c4dff);color:#fff;margin:-14px -14px 8px;padding:10px 14px 6px}
+  .mini.m-aurora .m-head .m-line{background:#93a9ff}
+  .mini.m-sunset{border-top:8px solid #ea580c}
+  .mini.m-sunset .m-name{color:#c2410c}
+  .mini.m-mono{font-family:ui-monospace,monospace}
+  .mini.m-mono .m-name{font-family:inherit}
+  .mini.m-aero .m-head{background:#e0f2fe;margin:-14px -14px 8px;padding:10px 14px 6px}
+  .mini.m-aero .m-head .m-name{color:#075985}
+  .mini.m-glacier{background:#f4fafd;border-bottom:2px solid #38bdf8}
+  .mini.m-glacier .m-name{color:#0369a1}
+  .mini.m-midnight .m-head{background:#0b1220;color:#fff;margin:-14px -14px 8px;padding:10px 14px 6px}
+  .mini.m-midnight .m-head .m-line{background:#3a4358}
+  .mini.m-ruby{border-bottom:3px solid #be123c}
+  .mini.m-ruby .m-name{color:#9f1239}
+  .mini.m-linen{background:#faf6ef}
+  .mini.m-linen .m-name{font-family:"Source Serif 4",serif}
+  .mini.m-folio{font-family:"Source Serif 4",serif;text-align:center;border-top:3px double #1c2333}
   .tpl-meta{display:flex;align-items:center;gap:8px;padding:12px 14px}
   .tpl-meta .tname{font-weight:600;font-size:14.5px}
   .badge{font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:3px 8px;border-radius:999px}
@@ -387,7 +458,7 @@
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No ads · Works offline</span>
       </div>
       <div class="hero-stats" aria-label="At a glance">
-        <div><b>9</b><span>Matched templates</span></div>
+        <div><b>25</b><span>Matched templates</span></div>
         <div><b>3</b><span>Writing tones</span></div>
         <div><b>~2 min</b><span>To a finished letter</span></div>
         <div><b>$9</b><span>Premium · one-time</span></div>
@@ -467,17 +538,7 @@
           </div>
           <div class="field" style="margin-bottom:0">
             <label>Template</label>
-            <div class="tpl-pick" id="tplPick">
-              <button type="button" data-tpl="t-minimal" aria-pressed="true">Minimal</button>
-              <button type="button" data-tpl="t-modern" aria-pressed="false">Modern</button>
-              <button type="button" data-tpl="t-classic" aria-pressed="false">Classic</button>
-              <button type="button" data-tpl="t-slate" data-pro="1" data-name="Slate" aria-pressed="false">Slate <span class="pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>PRO</span></button>
-              <button type="button" data-tpl="t-paper" aria-pressed="false">Paper</button>
-              <button type="button" data-tpl="t-fern" aria-pressed="false">Fern</button>
-              <button type="button" data-tpl="t-onyx" data-pro="1" data-name="Onyx" aria-pressed="false">Onyx <span class="pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>PRO</span></button>
-              <button type="button" data-tpl="t-bold" data-pro="1" data-name="Bold" aria-pressed="false">Bold <span class="pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>PRO</span></button>
-              <button type="button" data-tpl="t-executive" data-pro="1" data-name="Executive" aria-pressed="false">Executive <span class="pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>PRO</span></button>
-            </div>
+            <div class="tpl-pick" id="tplPick"></div>
           </div>
         </form>
 
@@ -512,7 +573,7 @@
   <section id="templates" style="padding-top:10px">
     <div class="wrap">
       <div class="sec-head">
-        <span class="sec-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg> 9 designs</span>
+        <span class="sec-eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg> 25 designs</span>
         <h2>Templates that match your resume</h2>
         <p>Every design has a twin in Resume Builder, so your application arrives as one matched set. Tap a free template to try it in the builder — PRO designs unlock with Premium.</p>
       </div>
@@ -595,7 +656,7 @@
       <div class="band">
         <div>
           <h2>Get the Android app</h2>
-          <p>The full Cover Letter Builder on your phone — all 9 templates, 3 tones, PDF &amp; Word export. Works completely offline, no account, and your letters never leave your device.</p>
+          <p>The full Cover Letter Builder on your phone — all 25 templates, 3 tones, PDF &amp; Word export. Works completely offline, no account, and your letters never leave your device.</p>
           <p style="margin-top:10px;font-size:13.5px;color:var(--ink-3)">Free download · Android · To install: open the file, allow “Install unknown apps”, then tap Install.</p>
         </div>
         <a class="btn btn-primary" href="https://abdulsami026-crypto.github.io/cover-letter-builder-web/downloads/cover-letter-app.apk" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg> Download the app</a>
@@ -628,7 +689,7 @@
           <h3>Premium</h3>
           <div class="amt">$9 <small>one-time</small></div>
           <ul>
-            <li>All 9 templates, including Slate, Onyx, Bold &amp; Executive</li>
+            <li>All 25 templates — Slate, Executive, Aurora, Midnight, Ruby &amp; 15 more</li>
             <li>Designs matched to your Resume Builder templates</li>
             <li>Every future template included</li>
             <li>One payment — yours forever, no subscription</li>
@@ -767,7 +828,7 @@
 
   /* Premium gate — PRO templates stay locked until Premium is unlocked */
   function proGate(name){
-    toast(name + " is a Premium template — unlock all 9 designs for $9, one-time.", 3600);
+    toast(name + " is a Premium template — unlock all 25 designs for $9, one-time.", 3600);
     document.getElementById("pricing").scrollIntoView({behavior:"smooth"});
   }
 
@@ -805,17 +866,46 @@
     {name:"Paper", cls:"m-paper", tpl:"t-paper", pro:false},
     {name:"Fern", cls:"m-fern", tpl:"t-fern", pro:false},
     {name:"Slate", cls:"m-slate", tpl:"t-slate", pro:true},
+    {name:"Executive", cls:"m-executive", tpl:"t-executive", pro:true},
     {name:"Onyx", cls:"m-onyx", tpl:"t-onyx", pro:true},
     {name:"Bold", cls:"m-bold", tpl:"t-bold", pro:true},
-    {name:"Executive", cls:"m-executive", tpl:"t-executive", pro:true}
+    {name:"Creative", cls:"m-creative", tpl:"t-creative", pro:true},
+    {name:"Compact", cls:"m-compact", tpl:"t-compact", pro:true},
+    {name:"Elegant", cls:"m-elegant", tpl:"t-elegant", pro:true},
+    {name:"Cobalt", cls:"m-cobalt", tpl:"t-cobalt", pro:true},
+    {name:"Stone", cls:"m-stone", tpl:"t-stone", pro:true},
+    {name:"Portrait", cls:"m-portrait", tpl:"t-portrait", pro:true},
+    {name:"Timeline", cls:"m-timeline", tpl:"t-timeline", pro:true},
+    {name:"Aurora", cls:"m-aurora", tpl:"t-aurora", pro:true},
+    {name:"Sunset", cls:"m-sunset", tpl:"t-sunset", pro:true},
+    {name:"Mono", cls:"m-mono", tpl:"t-mono", pro:true},
+    {name:"Aero", cls:"m-aero", tpl:"t-aero", pro:true},
+    {name:"Glacier", cls:"m-glacier", tpl:"t-glacier", pro:true},
+    {name:"Midnight", cls:"m-midnight", tpl:"t-midnight", pro:true},
+    {name:"Ruby", cls:"m-ruby", tpl:"t-ruby", pro:true},
+    {name:"Linen", cls:"m-linen", tpl:"t-linen", pro:true},
+    {name:"Folio", cls:"m-folio", tpl:"t-folio", pro:true}
   ];
+
+  /* Builder template picker — generated from the same list as the gallery */
+  var lockSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>';
+  var pick = $("tplPick");
+  templates.forEach(function(t){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("data-tpl", t.tpl);
+    b.setAttribute("aria-pressed", t.tpl === state.tpl ? "true" : "false");
+    if (t.pro){ b.setAttribute("data-pro","1"); b.setAttribute("data-name", t.name); }
+    b.innerHTML = t.name + (t.pro ? ' <span class="pro">' + lockSvg + 'PRO</span>' : "");
+    pick.appendChild(b);
+  });
   var linesHtml = '<div class="m-line"></div><div class="m-line"></div><div class="m-line short"></div><div class="m-line"></div><div class="m-line"></div><div class="m-line short"></div><div class="m-line"></div><div class="m-line short"></div>';
   var gallery = $("gallery");
   templates.forEach(function(t){
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "tpl-card";
-    var head = t.cls === "m-slate"
+    var head = ["m-slate","m-aurora","m-midnight","m-aero"].indexOf(t.cls) >= 0
       ? '<div class="m-head"><div class="m-name">Your Name</div><div class="m-line" style="width:60%"></div></div>'
       : '<div class="m-name">Your Name</div>';
     btn.innerHTML =
